@@ -1,9 +1,9 @@
 import CareScale from "./CareScale"
 import '../styles/PlantItem.css'
 
-function PlantItem({name, cover, id, light, water}){
+function PlantItem({name, cover, light, water}){
   return (
-    <li key={id} className="lmj-plant-item">
+    <li className="lmj-plant-item" onClick={() => handleClick(name)}>
       <img src={cover} alt={`${name} cover`} className="lmj-plant-item-cover" />
       {name}
       <div>
@@ -14,6 +14,10 @@ function PlantItem({name, cover, id, light, water}){
 
     </li>
   )
+}
+
+function handleClick(plantName){
+  alert(`Vous voulez acheter 1 ${plantName} ? Très bon choix !`)
 }
 
 export default PlantItem
